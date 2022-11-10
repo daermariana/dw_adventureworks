@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_salesreason
+    columns:
+      - name: salesreason_sk
+        description: The primary key of the product.
+        tests:
+          - unique
+          - not_null
+          
+      - name: salesreason.salesreasonid
+      - name: salesreason.reason
+      - name: salesreason.reasontype
+      - name: sales_order_detail.salesorderid
+      - name: sales_order_detail.salesorderdetailid
+      - name: sales_order_detail.orderqty
+      - name: sales_order_detail.productid
+      - name: sales_order_detail.specialofferid
+      - name: sales_order_detail.unitprice
+      - name: sales_order_detail.unitpricediscount 

@@ -1,0 +1,486 @@
+version: 2
+
+sources:
+  - name: Source_adventure
+    schema: Adventureworks_EL
+    tables:
+        - name: person_address
+          column:
+            - name: addressid
+              description: Primary Key
+              tests:
+                - unique
+                - not null
+            - name: adressline1
+              description: Primeira linha de endereço
+              tests:
+                - unique
+                - not null
+            - name: adressline2
+              description: Segunda linha de endereço
+              tests:
+                - unique
+                - not null
+            - name: city
+              description: Nome da cidade
+              tests:
+                - unique
+                - not null
+            - name: stateprovinceid
+              description: Número de identificação do estado
+              tests:
+                - unique
+                - not null
+            - name: postalcode
+              description: código postal do endereço
+              tests:
+                - unique
+                - not null
+            - name: spatiallocation
+              description: latitude e longitude do endereço
+              tests:
+                - unique
+                - not null
+            - name: rowguid
+              description: rowguide
+              tests:
+                - unique
+                - not null
+            - name: modifieddate
+              description: Data de modificação/atualização das informações de endereço.
+              tests: 
+                - unique
+                - not null
+
+        - name: person_person
+          column: 
+            - name: businessentityid
+              description: Primary Key
+              tests:
+                - unique
+                - not null
+            - name: persontype
+              description: SC = Store Contact; IN = Individual(retail) customer; SP = Sales Person; EM = Employee(non-sales); VC = Vendor Contact; GC = General Contact
+              tests:
+                - unique
+                - not null
+            - name: namestyle
+              description: 0 = os dados em nome e sobrenome são armazenados em ordem de estilo ocidental (nome, sobrenome); 1 = ordem estilo oriental (sobrenome, nome)
+              tests:
+                - unique
+                - not null
+            - name: title
+              description: Mr. ou Ms.
+              tests:
+                - unique
+                - not null
+            - name: firstname
+              description: Primeiro nome da pessoa
+              tests:
+                - unique
+                - not null
+            - name: middlename
+              description: Nome do meio ou inicial
+              tests:
+                - unique
+                - not null
+            - name: middlename
+              description: Nome do meio ou inicial
+              tests:
+                - unique
+                - not null
+            - name: lastname
+              description: Ultimo sobrenome
+              tests:
+                - unique
+                - not null
+            - name: suffix
+              description: Sr. ou Jr.
+              tests:
+                - unique
+                - not null
+            - name: emailpromotion
+              description: 0 = contato não deseja receber e-mail de promoção; 1 = contato não deseja receber e-mail da Adventureworks; 2 = contato não deseja receber e-mail da Adventureworks e parceiro selecionado
+              tests:
+                - unique
+                - not null
+            - name: additionalcontactinfo
+              description: Histórico de informações sobre a pessoa em arquivo formato xml
+              tests:
+                - unique
+                - not null
+            - name: demographics
+              description: Informações adicionais sobre as pessoas
+              tests:
+                - unique
+                - not null
+            - name: rowguid
+              description: rowguid
+              tests:
+                - unique
+                - not null
+            - name: modifieddate
+              description: Data de modificação/atualização das informações das pessoas.
+              tests: 
+                - unique
+                - not null
+
+        - name: person_stateprovince
+          column: 
+            - name: stateprovinceid
+              description: Primary Key
+              tests:
+                - unique
+                - not null    
+            - name: stateprovincecode
+              description: Código do estado ou provincia
+              tests:
+                - unique
+                - not null    
+            - name: countryregioncode
+              description: Código do país ou região
+              tests:
+                - unique
+                - not null
+            - name: isonlystateprovinceflag
+              description: 0 = StateProvinceCode existe; 1 = StateProvinceCode idisponível, usando ContryRegionCode
+              tests:
+                - unique
+                - not null
+            - name: name
+              description: nome do estado ou provincia 
+              tests:
+                - unique
+                - not null
+            - name: territoryid
+              description: id do território o qual o estado ou a provincia estão localizados
+              tests:
+                - unique
+                - not null
+            - name: rowguid
+              description: rowguide
+              tests:
+                - unique
+                - not null
+            - name: modifieddate
+              description: Data de modificação/atualização das informações de estado ou provicia.
+              tests: 
+                - unique
+                - not null
+
+        - name: production_product
+          column: 
+            - name: productid
+              description: Primary Key
+              tests:
+                - unique
+                - not null
+            - name: productsubcategoryid
+              description: Id das Subcategorias que de cada um dos produtos da AdventureWorks pertence
+              tests:
+                - unique
+                - not null
+            - name: productmodelid
+              description: Id dos modelos de produtos produzidos pela AdventureWorks
+              tests: 
+                - unique
+                - not null 
+            - name: name_product
+              description: Informação do nome dos produtos produzidos pela AdventureWorks
+              tests: 
+                - unique
+                - not null 
+            - name: productnumber
+              description: Identificação/Numero correspondente aos produtos da AdventureWorks
+              tests: 
+                - unique
+                - not null 
+            - name: safetystocklevel
+              description: Informação de quantidade mínima de estoque
+              tests: 
+                - unique
+                - not null 
+            - name: reorderpoint
+              description: Referente a nível de estoque que aciona uma ordem de compra 
+              tests: 
+                - unique
+                - not null 
+            - name: standardcost
+              description: Informação referente ao custo padrão/tabelado do produto  
+              tests: 
+                - unique
+                - not null 
+            - name: listprice
+              description: Valor correspondente ao preço de venda dos produtos da AdventureWorks
+              tests: 
+                - unique
+                - not null 
+            - name: daystomanufacture
+              description: Dias necessários para produção dos produtos da AdventureWorks
+              tests: 
+                - unique
+                - not null 
+            - name: class
+              description: Informação sobre classe dos produtos (H= High, M= Medium, L= Low)
+              tests: 
+                - unique
+                - not null 
+            - name: sellstartdate
+              description: Informação sobre a data que o produto estava disponivel para venda
+              tests: 
+                - unique
+                - not null 
+            - name: sellenddate
+              description: Informações sobre data em que o produto não estava mais disponível para vendas
+              tests: 
+                - unique
+                - not null 
+            - name: discontinueddate
+              description: Informação sobre a data que o produto foi descontinuado 
+              tests: 
+                - unique
+                - not null 
+            - name: rowguid 
+              tests: 
+                - unique
+                - not null 
+            - name: modifieddate
+              description: Data de modificação/atualização das informações do produto da linha de referência
+              tests: 
+                - unique
+                - not null
+
+        - name: sales_creditcard
+          column: 
+            - name: creditcardid
+              description: Primary Key
+              tests:
+                - unique
+                - not null
+            - name: cardtype
+              description: Informações do nome do tipos de cartão 
+              tests: 
+                - unique
+                - not null 
+            - name: cardnumber
+              description: Informações do número do cartão correspondente.
+              tests: 
+                - unique
+                - not null 
+            - name: modifieddate
+              description: Data de modificação/atualização das informações do cartão crédito da linha de referência
+              tests: 
+                - unique
+                - not null 
+
+        - name: sales_customer
+          column: 
+            - name: customerid
+              description: Primary Key
+              tests:
+                - unique
+                - not null
+            - name: personid
+              description: Informação de ID do cliente da AdventureWorks. Chave estrangeira (FK) para Person.BusinessEntityID
+              tests: 
+                - unique
+                - not null 					
+            - name: storeid
+              description: Informação de ID da loja que realizou a venda. Chave estrangeira (FK) para Store.BusinessEntityID
+              tests: 
+                - unique
+                - not null 			
+            - name: territoryid
+              description: Informação de ID do território que o cliente esta localizado. Chave estrangeira (FK) para SalesTerritory.SalesTerritoryID
+              tests: 
+                - unique
+                - not null					
+            - name: rowguid
+              tests: 
+                - unique
+                - not null					
+            - name: modifieddate
+              description: Data de modificação/atualização das informações do cliente da linha de referência
+              tests: 
+                - unique
+                - not null	
+
+        - name: sales_salesorderdetail
+          column: 
+            - name: salesorderid
+              description: Primary Key
+              tests:
+                - unique
+                - not null
+            - name: salesorderdetailid
+              description: Primary Key. Numero ordenado por produto vendido 
+              tests:
+                - unique
+                - not null
+            - name: specialofferid
+              description: Informações de ID de ofertas especiais. Código promocional
+              tests:
+                - unique
+                - not null
+            - name: orderqty
+              description: Informação sobre a quantidade pedida por produto
+              tests:
+                - unique
+                - not null
+            - name: productid
+              description: Informação de ID do produto vendido ao cliente. Chave estrangeira (FK) Product.ProductID
+              tests:
+                - unique
+                - not null
+            - name: unitprice
+              description: Informações de preço unitário dos produtos da AdventureWorks
+              tests:
+                - unique
+                - not null
+            - name: unitpricediscount
+              description: Informações de descontos aplicados por produtos da AdventureWorks
+              tests:
+                - unique
+                - not null
+            - name: rowguid
+              tests:
+                - unique
+                - not null
+            - name: modifieddate
+              description: Data de modificação/atualização das informações do cliente da linha de referência
+              tests:
+                - unique
+                - not null	
+
+        - name: sales_salesorderheader
+          column:
+            - name: salesorderid
+              description: Primary Key
+              tests:
+                - unique
+                - not null	
+            - name: customerid
+              description: Informações de ID do cliente. Chave estrangeira (FK) para Customer.BusinessEntity.ID
+              tests:
+                - unique
+                - not null					
+            - name: shiptoaddressid	
+              description: Informação de endereço de envio do cliente. Chave estrangeira (FK) para Adress.AdressID
+              tests:
+                - unique
+                - not null				
+            - name: billtoaddressid
+              description: Informação sobre endereço de faturamento do cliente. Chave estrangeira (FK) para Adress.AdressID
+              tests:
+                - unique
+                - not null
+            - name: shipmethodid
+              description: Informação de ID do método de envio. Chave estrangeira (FK) para ShipMethod.ShipMethodID
+              tests:
+                - unique
+                - not null
+            - name: creditcardid
+              description: Id - Informações de cartão de crédito
+              tests:
+                - unique
+                - not null				
+            - name: orderdate
+              description: Informação de data que o pedido de venda foi criado.
+              tests:
+                - unique
+                - not null					
+            - name: duedate
+              description: Data em que o pedido é devido ao cliente
+              tests:
+                - unique
+                - not null					
+            - name: shipdate
+              description: Informação de data que o pedido é enviado ao cliente 
+              tests:
+                - unique
+                - not null
+            - name: statuscode
+              description: Informação sobre status atual do pedido (1= In process, 2= Approved, 3= BackOrdered, 4= Rejected, 5= Shipped, 6= Cancelled)
+              tests:
+                - unique
+                - not null
+            - name: onlineorderflag
+              description: 0 = pedido feito pelo vendedor; 1 = pedido feito online pelo cliente 
+              tests:
+                - unique
+                - not null
+            - name: purchaseordernumber
+              description: Referente ao numero do pedido de compra do cliente 
+              tests:
+                - unique
+                - not null										
+            - name: subtotal
+              description: Informação referente ao subtotal, desconsiderando imposto e frete
+              tests:
+                - unique
+                - not null					
+            - name: taxamt
+              description: Valor de imposto 
+              tests:
+                - unique
+                - not null					
+            - name: freight
+              description: valor de frete 
+              tests:
+                - unique
+                - not null					
+            - name: totaldue
+              description: Total devido, considerando valor de imposto e frete
+              tests:
+                - unique
+                - not null								
+            - name: rowguid
+              tests:
+                - unique
+                - not null				
+            - name: modifieddate
+              description: Data de modificação/atualização das informações de pedido de vendas da linha de referência
+              tests:
+                - unique
+                - not null		  
+
+        - name: sales_salesorderheadersalesreason
+          column:
+            - name: salesorderid
+              description: Primary Key
+              tests:
+                - unique
+                - not null						
+            - name: salesreasonid
+              description: Primary Key. Chave estrangeira (FK) para SalesReason.SalesReasonID 
+              tests:
+                - unique
+                - not null
+            - name: modifieddate
+              description: Data de modificação/atualização das informações do motivo de vendas da linha de referência
+              tests:
+                - unique
+                - not null
+        
+        - name: sales_salesreason
+          column:
+            - name: salesreasonid
+              description: Primary Key
+              tests:
+                - unique
+                - not null
+            - name: reason
+              description: Informações sobre o motivo de venda
+              tests:
+                - unique
+                - not null
+            - name: reasontype
+              description: Categoria a qual o motivo da venda percence  
+              tests:
+                - unique
+                - not null
+            - name: modifieddate
+              description: Data de modificação/atualização das informações sobre os motivos de venda da linha de referência
+              tests:
+                - unique
+                - not null

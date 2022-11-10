@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_status
+    columns:
+      - name: status_sk
+        description: The primary key of the product.
+        tests:
+          - unique
+          - not_null
+          
+      - name: sales_order_detail.salesorderid
+      - name: sales_order_detail.salesorderdetailid
+      - name: sales_order_detail.orderqty
+      - name: sales_order_detail.productid
+      - name: sales_order_detail.specialofferid
+      - name: sales_order_detail.unitprice
+      - name: sales_order_detail.unitpricediscount
+      - name: sales_order_header.customerid					
+      - name: sales_order_header.shiptoaddressid			
+      - name: sales_order_header.billtoaddressid
+      - name: sales_order_header.shipmethodid		
+      - name: sales_order_header.orderdate					
+      - name: sales_order_header.duedate					
+      - name: sales_order_header.shipdate					
+      - name: sales_order_header.statuscode
+      - name: sales_order_header.subtotal
+      - name: sales_order_header.taxamt
+      - name: sales_order_header.freight
+      - name: sales_order_header.totaldue
