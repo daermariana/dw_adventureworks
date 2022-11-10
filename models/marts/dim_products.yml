@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_products
+    columns:
+      - name: product_sk
+        description: The primary key of the product.
+        tests:
+          - unique
+          - not_null
+          
+      - name: products.productid
+      - name: products.productmodelid
+      - name: products.productsubcategoryid
+      - name: products.name_product
+      - name: products.productnumber
+      - name: products.safetystocklevel
+      - name: products.reorderpoint
+      - name: products.standardcost	
+      - name: products.listprice
+      - name: products.daystomanufacture
+      - name: products.class
+      - name: products.sellstartdate
+      - name: products.sellenddate
+      - name: products.discontinueddate
+      - name: sales_order_detail.salesorderid
+      - name: sales_order_detail.salesorderdetailid
+      - name: sales_order_detail.specialofferid
+      - name: sales_order_detail.orderqty
+      - name: sales_order_detail.unitprice
+      - name: sales_order_detail.unitpricediscount
